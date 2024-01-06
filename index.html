@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetic Algorithm Visualization</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 20px;
+            font-family: sans-serif;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        canvas {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Genetic Algorithms</h1>
+    <p>This demo visualizes the learning of an genetic algorithm for the traveling salesman problem. A path must be found which visits all cities exactly once that minimizes the distance through them. A code experiment by <a href="https://www.adamstirtan.net">Adam Stirtan</a>.</p>
+    <label for="crossoverRate">Crossover Rate:</label>
+    <input type="range" id="crossoverRate" min="0" max="1" step="0.01" value="0.7">
+    
+    <label for="mutationRate">Mutation Rate:</label>
+    <input type="range" id="mutationRate" min="0" max="1" step="0.01" value="0.1">
+
+    <label for="maxGenerations">Max Generations:</label>
+    <input type="number" id="maxGenerations" min="1" value="1000">
+
+    <button id="startButton">Start Evolution</button>
+    <button id="pauseButton" disabled>Pause Evolution</button>
+
+    <canvas id="canvas" width="800" height="400"></canvas>
+
+    <label for="output">Output:</label>
+    <textarea id="output" readonly></textarea>
+
+    <script src="script.js"></script>
+</body>
+</html>
